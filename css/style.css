@@ -26,7 +26,7 @@ footer
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
     color: #36395A;
-    cursor: pointer;
+    cursor: cell;
     display: inline-flex;
     font-family: "JetBrains Mono", monospace;
     height: 7vh;
@@ -78,11 +78,11 @@ footer
   font-size: 3vh;
   font-weight: bold;
   border-radius: 2vh;
-  cursor: pointer;
   text-align: center;
   margin-top:1vh;
   margin-bottom:5vh;
-  color: 	#D3D3D3;
+  color: #D3D3D3;
+  cursor:cell;
   
 }
 

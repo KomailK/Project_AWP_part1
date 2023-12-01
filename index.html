@@ -21,42 +21,14 @@
         -->
         <main id="app" class="main-content">
             <h1 v-text="mainHeading"></h1>
-        <!-- 
-                
-                On clicking the section element: section.card
-                > if the package title is displayed => show the usage and hide the package title
-                > if the package usage is displayed => show the package title and hide the usage
-                Toggling their views instead of having them displayed together
-                 
-                we can just inverse the value of isFlipped boolean property
-            -->    
+       
             
             <section @:click="isFlipped = !isFlipped" class="card">
-
-             <!-- 
-                    Instead of using a fixed index value for one element,
-                    using a variable to keep changing "index"
-                    so we will need to add a new data property "index" 
-                    to keep track of the current index in the array
-                -->   
                 <h2 v-text="isFlipped ? '' : Products[index].title"></h2>
                 <p v-text="isFlipped ? Products[index].description : ''"></p>
             </section>
 
             <div class="buttons">
-                <!-- 
-                    Instead of embedding JS inline statement (writing JS code)
-                    as the value of click event,
-                    we will invoke our method move()
-
-                    our logic will be encapsulated inside a method,
-                    to keep our HTML clean as much as we can: 
-                    
-                   
-                    But since we need to pass:
-                    - the value 1 for moving forward
-                    - the value -1 for moving backward
-                 -->
                 <button @click="move(-1)" type="button">Previous</button>
                 <button @click="move(1)" type="button">Next</button>
             </div>
@@ -65,7 +37,7 @@
         <footer>&copy; - Komail KASSIMALY & Harish UDAYAKUMAR</footer>
     </div>
 
-     <!-- Calling the Vue Framework first: -->
+     <!-- Calling the Vue Framework -->
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
      <!-- Calling our data file: -->
@@ -77,46 +49,22 @@
             data() {
                 return {
                     mainHeading: 'Our Products and Descriptions',
-                    // Getting our data from the data.js file:
-                    // adding another new property for "packages" array,
-                    // we can name it "packages" also
-                    // since property and it's value have the same name, we can put one word in ES6
-                    // packages: packages
                     Products,
-                    /*
-                    Adding another property to keep track if the card has isFlipped over or not
-                    */
                     isFlipped: false,
-                    // adding the property "userInput" with a default value:
                     userInput: 'Default',
-                    // adding index with initial value of 0 to load the first element
                     index: 0
                 }
-            }, // end data()
-            
-            /*
-            Adding our method(s) after data():
-            Adding a key for "methods" takes an object that contains the methods
-            A Vue method is an object associated with the Vue instance.
-            Functions are defined inside the methods object:
-            */
+            }, 
             methods: {
-                // The original method => move()
-                /* move() {
-                // Just increment the index value by 1
-                this.index++;
-                this.isFlipped = false;
-                } */
+                
                 move(change) {
-                    // make sure not to go beyond the range of our array:
-                    // check if the index is exist => move, else => don't move (nothing to do)
                     if (this.Products[this.index + change]) {
                         this.index += change;
                         this.isFlipped = false;
                     }
                 }
-            } // end methods
-        } // end javaPackagesApp
+            }
+        } 
 
         const app = Vue.createApp(javaPackagesApp).mount("#app");
     </script>

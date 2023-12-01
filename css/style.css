@@ -1,20 +1,18 @@
 /*-----------------------------Styling------------------------------*/
 
 html {
-    height: 100%;
-    width: 100%;
     background-color: #A9A9A9;
     color: #404040;
   }
 
   h1
   {
-    margin-bottom: 5%;
+    margin-bottom: 5vh;
   }
   
 footer
 {
-    margin-top: 10%;
+    margin-top: 7vh;
 }
   
   /*Styling buttons */
@@ -47,7 +45,7 @@ footer
     touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow, transform;
-    font-size: 18px;
+    font-size: 2.5vh;
     margin-top: 30vh;
   }
   
@@ -72,18 +70,18 @@ footer
  
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
   position: absolute;
-  width: 20%;
-  height: 20%;
+  width: 35vh;
+  height: 20vh;
   background: 	#202020;
   display: flex;
   justify-content: center;
-  font-size: 25px;
+  font-size: 3vh;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 2vh;
   cursor: pointer;
   text-align: center;
-  margin-top:1%;
-  margin-bottom:5%;
+  margin-top:1vh;
+  margin-bottom:5vh;
   color: 	#D3D3D3;
   
 }
